@@ -74,12 +74,27 @@ public class VMartrix {
     public String toString(){
         return lineToString(a1) + "\n" + lineToString(a2) + "\n" + lineToString(a3);
     }
-    private String lineToString(Double[] doubles){
+    public String lineToString(Double[] doubles){
         String line = "(";
         for(int i = 0; i < doubles.length-1; i++)
             line = line + doubles[i] + " ";
 
         line = line + " | " + doubles[doubles.length -1]+")";
         return line;
+    }
+
+    public void tauschIundII() {
+        Double[] I = getA1();
+        Double[] II = getA2();
+
+        this.a1 = II;
+        this.a2 = I;
+    }
+    public void tauschIIundIII() {
+        Double[] II = getA2();
+        Double[] III = getA3();
+
+        this.a2 = III;
+        this.a3 = II;
     }
 }
